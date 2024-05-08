@@ -26,9 +26,8 @@ public class Main {
 			{
 				spiele.play(spielplan.getGame());
 			}
-			
+
 		Tabelle.tabelle(liga);
 		Tabelle.printTabelle();
-
 		}
 }
