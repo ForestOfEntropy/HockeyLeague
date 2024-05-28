@@ -20,10 +20,6 @@ Scheduling:
                     Each club should play against every other club exactly once.
                     Games should be scheduled in a way that ensures each club plays an equal number of home and away games.
 
-Installation
-Clone the repository: git clone https://github.com/your-username/hockey-league.git
-Compile the Java files: javac *.java
-Run the application: java Main
 Usage
 Follow the instructions in the console to simulate games and view the league table.
 Use command-line options or user inputs to customize the simulation parameters.
