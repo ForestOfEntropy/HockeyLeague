@@ -26,5 +26,4 @@ Automatically generates a schedule for matches between teams.
 - Games should be scheduled to ensure each club plays an equal number of home and away games.
 
 ## Usage
-1. Follow the instructions in the console to simulate games and view the league table.
-2. Use command-line options or user inputs to customize the simulation parameters.
+1. Start the main file and use user inputs to customize the simulation parameters.
