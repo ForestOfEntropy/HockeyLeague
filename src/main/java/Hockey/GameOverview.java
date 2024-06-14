@@ -1,37 +1,55 @@
 package Hockey;
 
-public class GameOverview {
+public class GameOverview
+{
 // 	Die Spielplan-Matrix, die alle Spiele enthält
 	private final Club[][] gamePlan;
 	private int gameCounter = 0;
 
-	public GameOverview(Club[] liga) {
+	public GameOverview(Club[] liga)
+	{
 		int numberOfTeams = liga.length;
 		int otherTeams = numberOfTeams -1; //Anzahl der anderen Teams, aus der Perspektive eines Teams
 		int totalGames = numberOfTeams * otherTeams;
 		int matchCount = numberOfTeams / 2;
 
-
 		gamePlan = new Club[totalGames][2];
+
 //		Schleife für den Zugriff auf die einzelnen Spieltage
-		for (int round = 0; round <= numberOfTeams; round++)
+		for (int round = 0; round <otherTeams; round++)
 		{
 //			Schleife für den Zugriff auf die einzelnen Spiele
     		for (int matchIndex = 0; matchIndex < matchCount; matchIndex++)
     		{
         		int homeIndex  = (round + matchIndex) % otherTeams;
        			int guestIndex = (otherTeams - matchIndex + round) % otherTeams;
+				int game = round * matchCount + matchIndex;
+
 //				Wenn es das erste Spiel an diesem Spieltag ist, ist das letzte Team Gast
 				if (matchIndex == 0)
 				{
 					guestIndex = otherTeams;
 				}
-//		Spielplan update mit den entsprechenden Teams
-        gamePlan[round * (matchCount) + matchIndex][0] = liga[homeIndex];
-        gamePlan[round * (matchCount) + matchIndex][1] = liga[guestIndex];
-    }
+//				Spielplan update mit den entsprechenden Teams
+				if (round %2 !=0 && matchIndex %2  ==0)
+				{
+					gamePlan[game][0] = liga[guestIndex];
+					gamePlan[game][1] = liga[homeIndex];
+				}
+				else
+				{
+					gamePlan[game][0] = liga[homeIndex];
+					gamePlan[game][1] = liga[guestIndex];
+				}
+    		}
 		}
-
+//		Schleife für den Zugriff auf die einzelnen Spieltage der Rückrunde
+		for (int round = 0; round < totalGames/2; round++)
+		{
+			int game = round + (totalGames/2);
+			gamePlan[game][0] = gamePlan[round][1];
+			gamePlan[game][1] = gamePlan[round][0];
+		}
 
 	}
 

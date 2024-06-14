@@ -30,7 +30,6 @@
             <version>3.25.1</version>
              <scope>test</scope>
           </dependency>
-
     </dependencies>
 
     <build>
@@ -40,7 +39,6 @@
                 <artifactId>maven-clean-plugin</artifactId>
                 <version>3.3.2</version>
             </plugin>
-
 
             <plugin>
                 <groupId>org.apache.maven.plugins</groupId>

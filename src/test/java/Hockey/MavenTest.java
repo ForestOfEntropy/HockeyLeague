@@ -20,8 +20,13 @@ public class MavenTest
     {
         Assertions.assertThat(hc1.getName()).startsWith("EC");
     }
+    @Test
     void checkStrength()
     {
         Assertions.assertThat(hc1.getStrength()).isGreaterThan(0);
+    }
+    @Test
+    void checkContent()
+    {
     }
 }
